@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>my-project</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+  </head>
+  <body>
+  <div id="mag">
+    <label for="r1">修改颜色</label><input type="checkbox" v-model="use" id="r1">
+    <br><br>
+    <div v-bind:class="{'class1': use}">
+      v-bind:class 指令
+    </div>
+  </div>
+
+
+  <script>
+    new Vue({
+      el: '#mag',
+      data:{
+        use: false
+      }
+    })
+  </script>
+
+  <!--
+  <script>
+    new Vue({
+      el: '#meg',
+      data: {
+        message: '<h1>菜鸟教程</h1>'
+      }
+    })
+  </script>
+  -->
+    <!-- built files will be auto injected -->
+    <!--
+  <script type="text/javascript">
+    var vm = new Vue({
+      el: '#vue_det',
+      data: {
+        site: "菜鸟教程",
+        url: "www.runoob.com",
+        alexa: "10000"
+      },
+      methods: {
+        details: function () {
+          return  this.site + "学习的不仅仅是技术，更是梦想";
+        }
+      }
+    })
+
+  </script>
+  -->
+    <!--
+  <script>
+    // 我们的数据对象
+    var data = { site: "菜鸟教程", url: "www.runoob.com", alexa: 10000}
+    var vm = new Vue({
+      el: '#vue_det',
+      data: data
+    })
+    // 它们引用相同的对象！
+    document.write(vm.site === data.site) // true
+    document.write("<br>")
+    // 设置属性也会影响到原始数据
+    vm.site = "Runoob"
+    document.write(data.site + "<br>") // Runoob
+
+    // ……反之亦然
+    data.alexa = 1234
+    document.write(vm.alexa) // 1234
+  </script>
+  -->
+
+  </body>
+</html>
